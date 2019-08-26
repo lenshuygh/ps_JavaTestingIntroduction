@@ -9,10 +9,8 @@ public class CafeTest {
         // given
         Cafe cafe = new Cafe();
         cafe.restockBeans(7);
-
         // when
         Coffee coffee = cafe.brew(CoffeeType.Espresso);
-
         // then
         Assert.assertEquals(CoffeeType.Espresso,coffee.getType());
         Assert.assertEquals(0,coffee.getMilk());
@@ -24,11 +22,18 @@ public class CafeTest {
         // given
         Cafe cafe = new Cafe();
         cafe.restockBeans(7);
-
         // when
         Coffee coffee = cafe.brew(CoffeeType.Espresso);
-
         // then
         Assert.assertEquals(0,cafe.getBeansInStock());
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void lattesRequiresMilk(){
+        // given
+        Cafe cafe = new Cafe();
+        cafe.restockBeans(7);
+        // when
+        Coffee coffee = cafe.brew(CoffeeType.Latte);
     }
 }
