@@ -3,3 +3,5 @@
 /JavaTestingIntroduction.iml
 /.idea/misc.xml
 /.idea/vcs.xml
+/target/*
+/.idea/uiDesigner.xml
